@@ -6,7 +6,7 @@ pipeline {
                 git branch: 'main', changelog: false, poll: false, url: 'https://github.com/prinzjoseph/create-react-app.git'
             }
         }
-/*        stage('Installing dependencies') {
+        stage('Installing dependencies') {
             steps {
                 sh 'npm install'
             }
@@ -16,10 +16,10 @@ pipeline {
                 sh 'npm run test'
             }
         }
-        stage('Build') {
+        stage('Start') {
             steps {
-                sh 'npm run build'
+                sh 'npm start'
             } 
-        } */
+        } 
     }
 }
