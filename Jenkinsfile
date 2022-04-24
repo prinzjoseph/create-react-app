@@ -11,7 +11,7 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Testing') {
+       /* stage('Testing') {
             steps {
                 sh 'npm run test'
             }
@@ -19,7 +19,7 @@ pipeline {
         stage('Start') {
             steps {
                 sh 'npm start'
-            } 
+            } */
         } 
     }
 }
