@@ -18,7 +18,17 @@ pipeline {
         }
         stage('Build') {
             steps {
+                sh 'rm -rf build'
                 sh 'npm run build'
+            } 
+        }
+        stage('Deploy') {
+            steps {
+                sh '''
+                ssh root@13.233.36.39 "rm -rf /var/www/react"
+                rsync -avz build/ root@13.233.36.39:/var/www/react
+                echo "Deployed to https://nathan.zimail.ml"
+                '''
             } 
         }
     }
